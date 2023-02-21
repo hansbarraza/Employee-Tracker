@@ -1,7 +1,8 @@
 const mysql = require('mysql2');
-const {getAllEmployeeQuery} = require('./queries');
+const { getAllEmployeeQuery } = require('./queries');
 
 // Create a connection to the database
+const createConnection = () => {
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -28,5 +29,10 @@ connection.query(getAllEmployeeQuery, (err, results, fields) => {
     console.log('Database schema and tables created successfully.');
 });
 
-// Close the connection to the database
-connection.end();
+return connection;
+};
+
+// // Close the connection to the database
+// connection.end();
+
+module.exports = { createConnection };
