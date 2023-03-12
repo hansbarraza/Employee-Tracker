@@ -1,3 +1,4 @@
+// Import required modules
 const mysql = require('mysql2');
 const { getAllEmployeeQuery } = require('./queries');
 
